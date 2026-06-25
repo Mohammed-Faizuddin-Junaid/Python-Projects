@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrix Operations Tool</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: rgb(255, 255, 255);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            width: 500px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Matrix Operations Tool</h1>
+
+        <form method="POST" action="/calculate">
+
+            <!-- Matrix A -->
+            <label>Matrix A (space separated):</label>
+            <input type="text" name="matrix_a" placeholder="e.g. 1 2 3 4">
+            <label>Rows:</label>
+            <input type="number" name="rows_a" value="2">
+            <label>Cols:</label>
+            <input type="number" name="cols_a" value="2">
+
+            <!-- Operation -->
+            <label>Operation:</label>
+            <select name="operation" id="operation" onchange="toggleMatrixB()">
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+                <option value="multiply">Multiply</option>
+                <option value="transpose">Transpose</option>
+                <option value="inverse">Inverse</option>
+                <option value="determinant">Determinant</option>
+            </select>
+
+            <!-- Matrix B - hides for transpose/inverse/determinant -->
+            <div id="matrixB">
+                <label>Matrix B (space separated):</label>
+                <input type="text" name="matrix_b" placeholder="e.g. 5 6 7 8">
+                <label>Rows:</label>
+                <input type="number" name="rows_b" value="2">
+                <label>Cols:</label>
+                <input type="number" name="cols_b" value="2">
+            </div>
+
+            <br>
+            <button type="submit">Calculate</button>
+        </form>
+
+        <!-- Result -->
+        {% if result %}
+        <div class="result">
+            <h3>Result:</h3>
+            <pre>{{ result }}</pre>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <!-- JavaScript to hide/show Matrix B -->
+    <script>
+        function toggleMatrixB() {
+            var operation = document.getElementById("operation").value;
+            var matrixB = document.getElementById("matrixB");
+            if (operation === "transpose" || operation === "inverse" || operation === "determinant") {
+                matrixB.style.display = "none";
+            } else {
+                matrixB.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
