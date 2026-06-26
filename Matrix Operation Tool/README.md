@@ -17,14 +17,14 @@ Matrix Operation Tool is a  URL Web-Based Interface capable of performing variou
 
 ### Terminal version:
 1. Open the folder  save the program file in your PC. 
-2. Open a New Terminal and write 'python task3.py' to run the program.
+2. Open a New Terminal and write 'python terminal.py' to run the program.
 3. We can install both by running:
    pip install flask numpy
 4. flask for framework, numpy for performing operations.
 
 ### Web Version:
-1. Open the folder  save the program file (gui.py) in your PC. 
-2. Open a New Terminal and write "python gui.py" to run the program.
+1. Open the folder  save the program file (Web_Interface) in your PC. 
+2. Open a New Terminal and write "python Web_Interface" to run the program.
 3. In the Terminal place the cursor on the  URL link and press follow to access the Web-Interface. And perform your desired operation. Link-http://127.0.0.1:500.
 
 ## Project Structure:

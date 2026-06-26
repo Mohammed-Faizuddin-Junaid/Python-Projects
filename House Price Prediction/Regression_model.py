@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
 
 df=pd.read_csv("price.csv")
 # Converting the  alphabatical data into numarical data.
@@ -24,7 +25,7 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print(predictions)
 # Checking  if the model is showing  the accurate prices or not 
-from sklearn.metrics import r2_score
+#
 score = r2_score(y_test, predictions)
 print(f"Model Accuracy: {score*100:.1f}%")
 # Comparing the Actual prices with  the pridictions

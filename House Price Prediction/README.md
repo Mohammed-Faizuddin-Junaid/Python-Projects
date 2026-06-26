@@ -3,7 +3,7 @@ This project builds a machine learning model that predicts house prices
 based on features like area, bedrooms, bathrooms, stories, and other 
 factors using Linear Regression.
 ## Project Structure:
-This project contains three files. The main script `model.py` handles 
+This project contains three files. The main script `Regression_model.py` handles 
 everything from loading the data to training and predicting. The dataset 
 `price.csv` contains all the housing information the model learns from. 
 And `README.md` is this documentation file.
@@ -41,7 +41,7 @@ pip install pandas scikit-learn.
 
 ## How to Run:
 First copy or download this repository. Make sure `price.csv` is in 
-the same folder as `model.py`. Then open your terminal, Select 
+the same folder as `Regression_model.py`. Then open your terminal, Select 
 the project folder and run:
-python model.py
+python Regression_model.py
 The terminal will display the predicted prices and the model accuracy.
